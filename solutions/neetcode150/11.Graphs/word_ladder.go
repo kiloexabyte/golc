@@ -1,14 +1,10 @@
 package graphs
 
+import "slices"
+
 // Leetcode #127
 func ladderLength(beginWord string, endWord string, wordList []string) int {
-    found := false
-    for _, word := range wordList {
-        if word == endWord {
-            found = true
-            break
-        }
-    }
+    found := slices.Contains(wordList, endWord)
     if !found {
         return 0
     }
